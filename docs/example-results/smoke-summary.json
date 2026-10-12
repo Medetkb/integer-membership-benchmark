@@ -1,0 +1,46 @@
+{
+  "guardrails_pass": true,
+  "scenarios": [
+    {
+      "size": 8,
+      "hit_rate": 0.5,
+      "method": "list",
+      "seed_count": 1,
+      "median_of_seed_medians_ns": 34.3146,
+      "median_build_ns": 125.0,
+      "max_peak_python_mib": 0.00860595703125,
+      "max_errors_in_any_measurement": 0
+    },
+    {
+      "size": 8,
+      "hit_rate": 0.5,
+      "method": "set",
+      "seed_count": 1,
+      "median_of_seed_medians_ns": 22.72915,
+      "median_build_ns": 209.0,
+      "max_peak_python_mib": 0.009185791015625,
+      "max_errors_in_any_measurement": 0
+    }
+  ],
+  "paired_seed_estimates": [
+    {
+      "size": 8,
+      "hit_rate": 0.5,
+      "seed": 101,
+      "list_median_mean_lookup_ns": 34.3146,
+      "set_median_mean_lookup_ns": 22.72915,
+      "relative_improvement": 0.33762450968392455,
+      "speedup": 1.5097176973182014
+    }
+  ],
+  "analysis": {
+    "eligible_for_primary_test": false,
+    "primary_seed_count": 0,
+    "p_value_one_sided": null,
+    "median_relative_improvement": null,
+    "seeds_strictly_above_threshold": null,
+    "statistical_decision": "not_evaluated",
+    "practical_decision": "not_evaluated",
+    "note": "Smoke runs and incomplete studies cannot test the research hypothesis."
+  }
+}

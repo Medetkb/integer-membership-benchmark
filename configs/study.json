@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "mode": "study",
+  "sample_path": "data/sample/keys.csv",
+  "dataset_sizes": [100, 1000, 10000],
+  "hit_rates": [0.0, 0.5, 1.0],
+  "seeds": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],
+  "queries_per_batch": 1000,
+  "batch_loops": 10,
+  "warmup_pairs": 2,
+  "measurement_pairs": 8,
+  "worker_timeout_seconds": 120,
+  "output_dir": "results/study",
+  "guardrails": {
+    "max_errors": 0,
+    "max_peak_python_mib": 8.0
+  },
+  "hypothesis": {
+    "primary_size": 10000,
+    "primary_hit_rate": 0.5,
+    "minimum_relative_improvement": 0.2,
+    "alpha": 0.05,
+    "required_seeds": 30
+  }
+}

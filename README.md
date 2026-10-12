@@ -6,9 +6,9 @@ Research Methods Task 2: a methodology passport and an executable measurement in
 
 **Кожахмет Медетбек and Джазбаев Айбар** (pair submission). GitHub account: `medetkb`.
 
-Repository: **https://github.com/medetkb/integer-membership-benchmark**
+Public repository: **https://github.com/medetkb/integer-membership-benchmark**
 
-The URL above is the planned repository address; create it under `medetkb` before submission. This package has not published it. Record actual contributions in [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
+This project is published on the `main` branch. Record actual contributions in [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
 
 ## Overview
 
@@ -161,11 +161,11 @@ The repository contains a small, labelled smoke example in `docs/example-results
 
 ## GitHub and submission
 
-Follow [the Russian GitHub guide](docs/github-guide-ru.md) to create the planned public repository, make meaningful commits and submit the passport plus the real repository link. The ZIP contains the source files, not fabricated commit history. For pair work, each person should commit and document their actual contribution.
+The project is published at [the public GitHub repository](https://github.com/medetkb/integer-membership-benchmark). See [the Russian GitHub guide](docs/github-guide-ru.md) for verification and future updates. For pair work, document only actual contributions.
 
 ## Citation and license
 
-Suggested citation after publishing the repository:
+Suggested citation:
 
 > Кожахмет Медетбек and Джазбаев Айбар. (2026). *List versus set membership for repeated integer lookup*. Research Methods Task 2. https://github.com/medetkb/integer-membership-benchmark. Specify the commit used for the experiment.
 

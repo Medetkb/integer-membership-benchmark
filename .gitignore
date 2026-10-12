@@ -23,9 +23,20 @@ Thumbs.db
 .env.*
 *.pem
 *.key
+*.p12
+*.pfx
+*.secret
+*.token
+credentials.*
+secrets.*
+id_rsa
+id_ed25519
 *.log
 *.tmp
+*.temp
 *.swp
+*.bak
+*.orig
 
 # Generated results and non-sample datasets
 results/*
@@ -52,7 +63,12 @@ data/processed/
 *.bin
 *.zip
 *.tar
+*.tgz
 *.gz
+*.bz2
+*.xz
+*.7z
+*.rar
 
 # Submission PDFs are kept outside the source repository
 *.pdf

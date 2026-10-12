@@ -1,0 +1,18 @@
+test_cli_works_outside_repository_and_protects_previous_results (test_benchmark.PipelineTests.test_cli_works_outside_repository_and_protects_previous_results) ... ok
+test_memory_guardrail_returns_nonzero_exit_status (test_benchmark.PipelineTests.test_memory_guardrail_returns_nonzero_exit_status) ... ok
+test_timeout_is_a_reported_failure_without_inference (test_benchmark.PipelineTests.test_timeout_is_a_reported_failure_without_inference) ... ok
+test_bad_sample_is_rejected (test_benchmark.ScientificInvariantTests.test_bad_sample_is_rejected) ... ok
+test_exact_sign_test_known_values (test_benchmark.ScientificInvariantTests.test_exact_sign_test_known_values) ... ok
+test_incomplete_study_or_wrong_runtime_disables_inference (test_benchmark.ScientificInvariantTests.test_incomplete_study_or_wrong_runtime_disables_inference) ... ok
+test_invalid_config_is_rejected (test_benchmark.ScientificInvariantTests.test_invalid_config_is_rejected) ... ok
+test_list_and_set_agree_including_duplicates_negative_values_and_misses (test_benchmark.ScientificInvariantTests.test_list_and_set_agree_including_duplicates_negative_values_and_misses) ... ok
+test_primary_test_separates_significance_and_guardrails (test_benchmark.ScientificInvariantTests.test_primary_test_separates_significance_and_guardrails) ... ok
+test_smoke_never_claims_hypothesis_confirmation (test_benchmark.ScientificInvariantTests.test_smoke_never_claims_hypothesis_confirmation) ... ok
+test_ties_do_not_count_as_successes (test_benchmark.ScientificInvariantTests.test_ties_do_not_count_as_successes) ... ok
+test_worker_balances_order_and_checks_every_method (test_benchmark.ScientificInvariantTests.test_worker_balances_order_and_checks_every_method) ... ok
+test_workload_has_exact_ground_truth_and_is_reproducible (test_benchmark.ScientificInvariantTests.test_workload_has_exact_ground_truth_and_is_reproducible) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.315s
+
+OK

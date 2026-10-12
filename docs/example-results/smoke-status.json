@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "mode": "smoke",
+  "workers": 1,
+  "raw_rows": 16,
+  "elapsed_seconds": 0.05725049995817244,
+  "guardrails_pass": true,
+  "finished_utc": "2026-10-08T05:09:10.619153+00:00"
+}
