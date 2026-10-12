@@ -1,0 +1,17 @@
+.git/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+results/
+docs/
+notebooks/
+*.zip
+*.pdf
+*.log
+.DS_Store
+.env
+.env.*
+*.pem
+*.key

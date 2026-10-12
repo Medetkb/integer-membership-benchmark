@@ -1,0 +1,58 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Machine-specific files, secrets and temporary logs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.env
+.env.*
+*.pem
+*.key
+*.log
+*.tmp
+*.swp
+
+# Generated results and non-sample datasets
+results/*
+!results/README.md
+data/raw/
+data/generated/
+data/processed/
+
+# Binary datasets and model weights
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.parquet
+*.h5
+*.hdf5
+*.sqlite
+*.db
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+*.zip
+*.tar
+*.gz
+
+# Submission PDFs are kept outside the source repository
+*.pdf

@@ -1,0 +1,3 @@
+# Runtime: CPython == 3.12.14, pinned by .python-version and Dockerfile.
+# No third-party runtime or test packages. All imports use the Python stdlib.
+# This intentionally empty dependency set can be installed offline with pip.

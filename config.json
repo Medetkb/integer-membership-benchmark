@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "mode": "smoke",
+  "sample_path": "data/sample/keys.csv",
+  "dataset_sizes": [8],
+  "hit_rates": [0.5],
+  "seeds": [101],
+  "queries_per_batch": 1000,
+  "batch_loops": 10,
+  "warmup_pairs": 2,
+  "measurement_pairs": 8,
+  "worker_timeout_seconds": 120,
+  "output_dir": "results/smoke",
+  "guardrails": {
+    "max_errors": 0,
+    "max_peak_python_mib": 8.0
+  },
+  "hypothesis": {
+    "primary_size": 10000,
+    "primary_hit_rate": 0.5,
+    "minimum_relative_improvement": 0.2,
+    "alpha": 0.05,
+    "required_seeds": 30
+  }
+}
