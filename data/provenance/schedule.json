@@ -1,0 +1,1352 @@
+[
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 117
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 113
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 112
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 111
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 120
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 126
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 123
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 121
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 110
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 124
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 126
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 128
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 124
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 111
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 120
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 121
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 107
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 113
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 130
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 130
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 107
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 116
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 108
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 125
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 111
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 118
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 124
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 116
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 126
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 123
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 115
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 130
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 125
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 111
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 105
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 106
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 101
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 111
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 121
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 101
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 107
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 110
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 115
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 107
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 125
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 112
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 109
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 124
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 108
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 124
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 127
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 106
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 122
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 115
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 113
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 109
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 102
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 122
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 127
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 118
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 102
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 113
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 103
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 124
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 127
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 127
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 107
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 115
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 110
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 102
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 103
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 101
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 102
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 127
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 122
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 101
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 114
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 105
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 128
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 125
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 126
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 108
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 115
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 111
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 108
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 102
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 124
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 129
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 122
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 130
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 114
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 103
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 103
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 115
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 109
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 101
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 123
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 114
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 110
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 105
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 102
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 109
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 114
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 129
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 128
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 130
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 123
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 114
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 105
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 105
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 116
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 117
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 122
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 123
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 128
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 120
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 105
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 117
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 109
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 110
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 122
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 115
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 125
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 109
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 123
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 119
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 113
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 115
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 106
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 104
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 116
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 117
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 102
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 126
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 101
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 101
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 103
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 103
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 105
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 125
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 120
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 126
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 111
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 121
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 101
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 128
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 128
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 120
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 130
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 113
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 121
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 117
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 125
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 113
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 114
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 108
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 122
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 111
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 121
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 106
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 111
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 104
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 121
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 127
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 102
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 126
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 108
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 125
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 106
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 120
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 103
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 122
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 119
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 128
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 102
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 112
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 106
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 117
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 117
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 123
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 127
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 109
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 113
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 114
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 107
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 105
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 128
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 108
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 121
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 106
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 123
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 103
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 105
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 103
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 110
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 115
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 125
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 128
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 119
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 117
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 118
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 124
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 106
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 130
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 113
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 107
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 109
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 110
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 123
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 120
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 118
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 110
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 121
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 101
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 120
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 110
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 112
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 106
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 107
+  },
+  {
+    "size": 100,
+    "hit_rate": 1.0,
+    "seed": 130
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 129
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.5,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 127
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 108
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 109
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 129
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 126
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 108
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 114
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 114
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.0,
+    "seed": 107
+  },
+  {
+    "size": 100,
+    "hit_rate": 0.5,
+    "seed": 117
+  },
+  {
+    "size": 1000,
+    "hit_rate": 1.0,
+    "seed": 130
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 127
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.5,
+    "seed": 124
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 119
+  },
+  {
+    "size": 10000,
+    "hit_rate": 1.0,
+    "seed": 122
+  },
+  {
+    "size": 1000,
+    "hit_rate": 0.0,
+    "seed": 120
+  },
+  {
+    "size": 10000,
+    "hit_rate": 0.0,
+    "seed": 126
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "raw_rows": 5400,
+  "warmup_rows": 1080,
+  "benchmark_rows": 4320,
+  "outlier_rows_retained": 212,
+  "failed_benchmark_observations": 0,
+  "failed_warmup_observations": 0,
+  "max_peak_python_mib": 0.6252517700195312,
+  "guardrails_pass": true,
+  "bootstrap_seed": 42,
+  "bootstrap_resamples": 10000,
+  "statistical_unit": "one seeded workload; eight technical repeats aggregated by median",
+  "raw_sha256": "577b240fbee8cd3100be0c800c5142fb3772ed64df06a6ab2c69d173ae0db069"
+}

@@ -1,0 +1,43 @@
+{
+  "automated_tests_passed": 17,
+  "notebook_code_cells": 8,
+  "notebook_sequential": true,
+  "notebook_errors": 0,
+  "raw_rows": 5400,
+  "benchmark_rows": 4320,
+  "warmup_rows": 1080,
+  "collection_code_hashes_verified": true,
+  "local_links_verified": 15,
+  "figures": {
+    "fig1_latency_vs_load": {
+      "pixels": [
+        3034,
+        1204
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "fig2_distribution_boxplot": {
+      "pixels": [
+        2434,
+        1294
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "report_pages": 5
+  },
+  "all_five_report_pages_visually_inspected": true,
+  "scientific_plot_pngs_visually_inspected": true,
+  "gitignore_allowlist_verified": true,
+  "sha256": {
+    "data/raw/test_run.jsonl": "577b240fbee8cd3100be0c800c5142fb3772ed64df06a6ab2c69d173ae0db069",
+    "data/processed/metrics_summary.csv": "26fa12d126f1549b0ffec00a60b6175c58912c610524c952873bb0429608e047",
+    "notebooks/01_data_analysis.ipynb": "54f79816d2ca31148f16da3af4dc9b66d000e928b24159ebd1a3af6f7730b216",
+    "reports/Task3_Report_RU.pdf": "f879217540f3eb2b13d4025dec25c5694cfc4296dec980e241593340b88040bb"
+  }
+}

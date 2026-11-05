@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-11-05T18:14:14.564892+00:00",
+  "python": "3.12.14",
+  "python_build": [
+    "main",
+    "Aug 25 2026 13:50:33"
+  ],
+  "implementation": "CPython",
+  "reference_python": "3.12.14",
+  "runtime_matches_pin": true,
+  "os": "Darwin",
+  "os_release": "25.6.0",
+  "os_version": "Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:29 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T8122",
+  "architecture": "arm64",
+  "processor": "arm",
+  "logical_cpu_count": 8,
+  "clock": {
+    "implementation": "mach_absolute_time()",
+    "resolution_seconds": 4.166666666666667e-08,
+    "monotonic": true
+  },
+  "worker_pythonhashseed": "0",
+  "config_name": "study.json",
+  "config_sha256": "6dec1b12a3a8f5e0dab71babc95f5c833966c2d4f606b24b8690c442b4488b78",
+  "input_and_code_sha256": {
+    "src/benchmark.py": "771cd16b09a3642fd71811dd2a275fe065b0f0bf2a98870c94d3f8e1d494407e",
+    ".python-version": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc",
+    "requirements.txt": "5d63d94b16429e9b00d0377703a28e3feedbb4a213cc20a09b27345793e405f9",
+    "data/sample/keys.csv": "edab48ef0726029269deeacaf74011e3c2eaf7ba92e425b19dc68f265ef47ec4"
+  },
+  "configured_sample_sha256": "edab48ef0726029269deeacaf74011e3c2eaf7ba92e425b19dc68f265ef47ec4",
+  "measurement_scope": "in-process Python membership loop; I/O and construction excluded from lookup timer",
+  "memory_scope": "incremental traced Python allocations for container plus one Boolean output vector; not RSS"
+}

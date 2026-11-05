@@ -1,3 +1,3 @@
-# Optional exploratory notebooks
+# Task 3 notebook
 
-No notebook is required to run or reproduce Task 2. Keep the measurement instrument in `src/` and parameters in the configuration files. If notebooks are added in Week 7, read saved `results/` data, label exploratory analysis clearly and keep checkpoint files out of Git.
+Open `01_data_analysis.ipynb` to inspect the executed analysis. All eight code cells retain outputs. From the repository root, `python src/run_notebook.py` starts a fresh kernel and regenerates outputs using the installed Python environment. It reads the submitted data and does not collect new measurements.

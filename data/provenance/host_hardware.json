@@ -1,0 +1,8 @@
+{
+  "cpu_model": "Apple M3",
+  "ram_bytes": "8589934592",
+  "execution": "native macOS; desktop applications remained open",
+  "environment_control": "No CPU affinity, thermal, frequency or background-process isolation imposed",
+  "collection_date_local": "2026-11-05",
+  "timezone": "Asia/Almaty"
+}

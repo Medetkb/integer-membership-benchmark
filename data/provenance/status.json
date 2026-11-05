@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "mode": "study",
+  "workers": 270,
+  "raw_rows": 4320,
+  "warmup_rows": 1080,
+  "jsonl_rows": 5400,
+  "elapsed_seconds": 253.70635383299668,
+  "guardrails_pass": true,
+  "finished_utc": "2026-11-05T18:18:28.265286+00:00"
+}

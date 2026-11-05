@@ -192,29 +192,34 @@ def run_worker(task: dict) -> dict:
     memory = {method: memory_and_errors(method, keys, queries, expected) for method in METHODS}
     loops = config["batch_loops"]
     expected_hits = sum(expected)
-    for _ in range(config["warmup_pairs"]):
-        for method in METHODS:
-            _, _, errors = measure(method, keys, queries, loops, expected_hits)
-            if errors:
-                raise RuntimeError("Incorrect warmup output.")
+    def observation(method, pair, position, phase):
+        timestamp = datetime.now(timezone.utc).isoformat(timespec="microseconds")
+        build_ns, elapsed_ns, errors = measure(method, keys, queries, loops, expected_hits)
+        peak, vector_errors = memory[method]
+        lookups = len(queries) * loops
+        return {
+            "timestamp_utc": timestamp, "phase": phase,
+            "size": size, "hit_rate": rate, "seed": seed, "method": method,
+            "pair": pair, "order_position": position, "lookups": lookups,
+            "batch_elapsed_ns": elapsed_ns, "mean_lookup_ns": elapsed_ns / lookups,
+            "throughput_ops_per_s": lookups * 1e9 / elapsed_ns, "build_ns": build_ns,
+            "peak_python_bytes": peak, "errors": errors + vector_errors,
+            "workload_sha256": digest,
+        }
+
+    # Preserve warmup evidence without changing the Task 2 timed regions.
+    warmup_rows = []
+    for pair in range(1, config["warmup_pairs"] + 1):
+        for position, method in enumerate(METHODS, start=1):
+            warmup_rows.append(observation(method, pair, position, "warmup"))
     # Each method is first in exactly half the pairs; shuffle that balanced schedule.
     orders = [("list", "set"), ("set", "list")] * (config["measurement_pairs"] // 2)
     random.Random(seed + 2_000_000).shuffle(orders)
     rows = []
     for pair, order in enumerate(orders, start=1):
         for position, method in enumerate(order, start=1):
-            build_ns, elapsed_ns, errors = measure(method, keys, queries, loops, expected_hits)
-            peak, vector_errors = memory[method]
-            lookups = len(queries) * loops
-            rows.append({
-                "size": size, "hit_rate": rate, "seed": seed, "method": method,
-                "pair": pair, "order_position": position, "lookups": lookups,
-                "batch_elapsed_ns": elapsed_ns, "mean_lookup_ns": elapsed_ns / lookups,
-                "throughput_ops_per_s": lookups * 1e9 / elapsed_ns, "build_ns": build_ns,
-                "peak_python_bytes": peak, "errors": errors + vector_errors,
-                "workload_sha256": digest,
-            })
-    return {"rows": rows}
+            rows.append(observation(method, pair, position, "benchmark"))
+    return {"rows": rows, "warmup_rows": warmup_rows}
 
 
 def binomial_upper_tail(successes: int, total: int) -> float:
@@ -327,7 +332,9 @@ def run_controller(config_path: Path, output_override: str | None) -> int:
     write_json(output / "schedule.json", [{"size": size, "hit_rate": rate, "seed": seed} for size, rate, seed in tasks])
     started = time.monotonic()
     rows = []
-    with (output / "raw.csv").open("w", newline="", encoding="utf-8") as stream:
+    warmup_rows = []
+    with (output / "raw.csv").open("w", newline="", encoding="utf-8") as stream, \
+            (output / "raw.jsonl").open("w", encoding="utf-8") as jsonl:
         writer = None
         for index, (size, rate, seed) in enumerate(tasks, start=1):
             task = {"config": config, "size": size, "hit_rate": rate, "seed": seed, "sample_keys": sample_keys}
@@ -338,7 +345,9 @@ def run_controller(config_path: Path, output_override: str | None) -> int:
                     timeout=config["worker_timeout_seconds"], check=True,
                     env={**os.environ, "PYTHONHASHSEED": "0", "PYTHONDONTWRITEBYTECODE": "1"},
                 )
-                new_rows = json.loads(completed.stdout)["rows"]
+                worker_result = json.loads(completed.stdout)
+                new_rows = worker_result["rows"]
+                new_warmup = worker_result["warmup_rows"]
             except (subprocess.TimeoutExpired, subprocess.CalledProcessError, json.JSONDecodeError, KeyError) as error:
                 write_json(output / "status.json", {
                     "status": "failed", "completed_workers": index - 1,
@@ -354,13 +363,22 @@ def run_controller(config_path: Path, output_override: str | None) -> int:
                 writer.writeheader()
             writer.writerows(new_rows)
             stream.flush()
+            for row in new_warmup + new_rows:
+                jsonl.write(json.dumps(row, allow_nan=False, separators=(",", ":")) + "\n")
+            jsonl.flush()
             rows.extend(new_rows)
+            warmup_rows.extend(new_warmup)
             print(f"Completed {index}/{len(tasks)}: n={size}, hit_rate={rate}, seed={seed}", flush=True)
     summary = summarize(rows, config, metadata["runtime_matches_pin"])
+    summary["warmup_errors"] = sum(row["errors"] for row in warmup_rows)
+    if summary["warmup_errors"]:
+        summary["guardrails_pass"] = False
+        summary["analysis"]["practical_decision"] = "criteria_not_met"
     write_json(output / "summary.json", summary)
     status = "completed" if summary["guardrails_pass"] else "guardrail_failed"
     write_json(output / "status.json", {
         "status": status, "mode": config["mode"], "workers": len(tasks), "raw_rows": len(rows),
+        "warmup_rows": len(warmup_rows), "jsonl_rows": len(rows) + len(warmup_rows),
         "elapsed_seconds": time.monotonic() - started, "guardrails_pass": summary["guardrails_pass"],
         "finished_utc": datetime.now(timezone.utc).isoformat(),
     })

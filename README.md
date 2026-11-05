@@ -1,180 +1,106 @@
 # List versus set membership for repeated integer lookup
 
-Research Methods Task 2: a methodology passport and an executable measurement instrument.
+Research Methods Task 3: real measurements, reproducible analysis and scientific visualization.
 
-## Authors
+**Authors:** Кожахмет Медетбек and Джазбаев Айбар. **Track:** Software Engineering. **Release:** `v3.0.0-task3`.
 
-**Кожахмет Медетбек and Джазбаев Айбар** (pair submission). GitHub account: `medetkb`.
+This extends [Task 2](README_TASK2.md) using the same research question and study configuration. It compares built-in Python list membership (baseline) with set membership (proposed implementation) for repeated integer lookups. The Task 2 topic is continued here; no claim about an unprovided Task 1 is made.
 
-Public repository: **https://github.com/medetkb/integer-membership-benchmark**
+## Results & Discussion
 
-This project is published on the `main` branch. Record actual contributions in [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
+At the prespecified primary condition (10,000 keys, 50% hits), median paired speedup was **822.78x** (95% seed-bootstrap CI **812.66-829.02x**). The median relative reduction was **99.878%**. All 30 seed estimates exceeded the 20% threshold; the one-sided exact sign test gave **p = 9.31e-10**. Both correctness and traced-allocation guardrails passed. These results support H1 within this host and workload protocol, with the single-run limitations below.
 
-## Overview
+The table gives **median (p25-p75)** across 30 seed estimates per condition. Each seed estimate aggregates eight technical repeats. Times are ns/query and include the Python loop; set/list construction is timed separately. Bold marks lower lookup time, not overall superiority on all costs.
 
-This quantitative controlled experiment compares Python list membership, the baseline, with set membership for repeated integer queries. It measures query latency, construction time, throughput and incremental Python allocation peaks, while checking every query against known ground truth.
+| Keys | Hits | List median (p25-p75), ns/query | Set median (p25-p75), ns/query | Paired speedup median, x |
+|---:|---:|---:|---:|---:|
+| 100 | 0% | 302.65 (302.25-303.35) | **11.54 (11.52-11.56)** | 26.24 |
+| 100 | 50% | 237.74 (236.18-239.75) | **24.77 (24.58-24.96)** | 9.58 |
+| 100 | 100% | 167.37 (165.42-168.95) | **21.05 (20.90-21.11)** | 8.00 |
+| 1,000 | 0% | 2,874.26 (2,870.62-2,879.66) | **17.07 (16.95-17.19)** | 168.59 |
+| 1,000 | 50% | 2,166.77 (2,154.86-2,179.83) | **25.27 (25.14-25.60)** | 85.77 |
+| 1,000 | 100% | 1,465.21 (1,436.06-1,476.12) | **21.28 (21.08-21.45)** | 68.44 |
+| 10,000 | 0% | 31,708.97 (31,614.36-31,810.41) | **12.87 (12.79-13.02)** | 2,456.65 |
+| 10,000 | 50% | 23,784.66 (23,582.64-24,127.62) | **28.99 (28.81-29.52)** | 822.78 |
+| 10,000 | 100% | 15,768.29 (15,633.58-15,982.92) | **24.47 (24.04-24.71)** | 642.62 |
 
-**Topic assumption:** the supplied `task2.docx` and the available prior conversation do not specify the Task 1 topic. This repository therefore uses a neutral demonstration topic. It does not claim continuity with an unknown Task 1. If the actual topic differs, revise the question, hypotheses, variables and code together before submission.
 
-**Task 2 status:** the sample run validates the instrument. It does not confirm a research hypothesis. The Week 7 collection protocol is specified separately in [the methodology passport](docs/methodology-passport.md). Local validation evidence is in [docs/verification.md](docs/verification.md).
+The primary-condition maximum traced allocation peaks were 0.0848 MiB for list and 0.6253 MiB for set. The full experiment had zero failed evaluation observations. Set construction took a median 101.96 microseconds versus 14.89 for list. See the [full report](reports/task3_report.md) and [Russian PDF report](reports/Task3_Report_RU.pdf).
 
-## Research question
+![Lookup scaling](reports/figures/fig1_latency_vs_load.png)
 
-For 10,000 unique integers and batches of 1,000 membership queries with exactly 50% hits, does replacing a prebuilt list with a prebuilt set reduce typical per-query time by more than 20%, while preserving exact correctness and keeping incremental traced allocations at or below 8 MiB on the same computer?
+Figure 1. Median of 30 seed medians of batch-average lookup time versus container size, separately for 0%, 50% and 100% hits. Each seed estimate aggregates eight evaluation repeats. Error bars and shaded bands show 95% percentile-bootstrap confidence intervals from 10,000 seed resamples. Both axes are logarithmic; intervals may be narrower than the markers. Blue dashed circles identify list; orange solid squares identify set. List time grows strongly with key count, whereas set time changes much less across these conditions.
 
-For seed `i`, let `L_list,i` and `L_set,i` be the medians of eight batch-average lookup times, and let `R_i = 1 - L_set,i / L_list,i`.
+![Primary-condition distribution](reports/figures/fig2_distribution_boxplot.png)
 
-- **H0:** the population median of `R_i` under the specified workload and host is at most 0.20.
-- **H1:** the population median of `R_i` is greater than 0.20.
+Figure 2. Distribution of the 30 seed estimates at 10,000 keys and 50% hits. Boxes span p25-p75, the central line is the median, whiskers extend to observations within 1.5 IQR, and all seed values are plotted individually. The black diamond and caps show the median and 95% bootstrap CI. The panels use separate linear y-scales to expose within-method variation; compare absolute magnitudes with Figure 1 or the table.
 
-The primary endpoint is the median relative improvement over 30 prespecified seeded workloads. A one-sided exact sign test uses `alpha = 0.05`; ties at the 20% threshold count as failures. Practical support additionally requires every guardrail to pass. Failing to reject H0 is not proof that the methods are equivalent.
+## Domain model
 
-## System requirements
+The [C4 component diagram](docs/domain_model.md) explicitly marks construction timing (M1), lookup timing (M2), and the untimed allocation/correctness probe (M3). It includes metric definitions, equations, boundaries and invariants. File I/O is outside the measured region.
 
-- Reference interpreter: **CPython 3.12.14**, pinned in `.python-version` and in the Docker image.
-- No third-party runtime or test packages. `requirements.txt` intentionally contains comments only; there are no unpinned library dependencies.
-- Linux, macOS or Windows with Python available in a terminal. Commands below use `python`; on macOS/Linux use `python3` if that is your interpreter command.
-- Alternatively, a running Docker installation. Its base image is pinned by multi-platform digest, including the operating-system userspace and Python libraries.
-- A single local computer with at least 1 GiB available RAM and 100 MiB free disk is sufficient for this small benchmark. Close heavy background applications and keep the power mode constant for the study.
+## Reproduce the analysis
 
-Python 3.12 or later can run the smoke check. If the exact version or implementation differs from the reference, the program records that fact and disables confirmatory inference. No packages, data or credentials are downloaded during benchmark execution.
-
-## Quickstart guide
-
-After extracting the archive, run these **three commands** from the directory containing `task2-research-methods`:
+Use CPython **3.12.14** for the reference environment. From the repository root:
 
 ```bash
-cd task2-research-methods
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-analysis.txt
 python -m unittest discover -s tests -v
-python src/benchmark.py --config config.json
+python src/run_notebook.py
 ```
 
-The last command reads all **8 sample records** in `data/sample/keys.csv`, builds 1,000 labelled queries, performs two warmup pairs and eight measured pairs, and writes **16 measurement rows** under `results/smoke/`. A successful run exits with code 0 and prints `COMPLETED` and `Hypothesis decision: not_evaluated`.
+On Windows, activate with `.venv\Scripts\activate` instead. The benchmark itself remains standard-library-only; analysis has the pinned packages in `requirements-analysis.txt`. Exact versions of the analysis preparation environment are recorded in `data/provenance/analysis_packages.json`.
 
-Each query batch is replayed ten times inside a measurement, giving 10,000 lookups per timed observation. Timings will differ across machines and runs. There is intentionally no fixed speed threshold in the smoke test.
+The final command starts a fresh kernel, executes all eight code cells in order and retains visible tables and figures in `notebooks/01_data_analysis.ipynb`. The committed notebook is already executed. Reanalysis reads the recorded JSONL, excludes warmup, retains flagged observations and failures, and regenerates deterministic CSV summaries plus vector PDF and 300 DPI PNG plots. Reanalysis does not collect new timings. Alternatively run `python src/process_data.py` and `python src/visualize.py` separately.
 
-For another run, preserve the previous evidence and choose a new directory:
+## Collect a separate new experiment
 
 ```bash
-python src/benchmark.py --config config.json --output results/smoke-02
+python src/benchmark.py --config configs/study.json --output results/new-study
 ```
 
-No environment activation or `pip install` is needed. If your course workflow requires an environment, `python -m venv .venv` is sufficient; the empty `requirements.txt` needs no downloads.
+Use a new empty output directory. This writes evaluation-only `raw.csv` for Task 2 compatibility and `raw.jsonl` with both phases. Keep its configuration, environment, schedule and status together. Do not mix runs or overwrite the submitted evidence. A new runtime that differs from `.python-version` disables primary inference. The executed study used 270 fresh worker processes, two warmup pairs and eight evaluation pairs; all timing and ground-truth checks are inherited from Task 2.
 
-### Docker alternative
-
-From the repository root, these commands build the image, run the tests during the build and save a smoke run to a new host directory:
-
-```bash
-docker build -t integer-membership:task2 .
-docker run --rm --network none -v "${PWD}/results/docker-smoke:/results" integer-membership:task2
-```
-
-These commands use Bash/Zsh syntax; PowerShell also expands `${PWD}`. Docker was not available in the preparation environment, so the build and container run are **provided but not locally executed**. The native Python path was executed. See [environment pinning](docs/environment.md) for the verified base-image source and exact digest. Repeat with a new output directory; existing results are never overwritten.
-
-## Planned benchmarks
-
-| Benchmark | Data source | Key count | Hit rate | Seeds | Measured pairs per seed | Purpose |
-|---|---|---:|---:|---:|---:|---|
-| Task 2 smoke | Committed CSV | 8 | 50% | 1 | 8 | Validate input, timing, metrics and output |
-| Primary Week 7 condition | Deterministic generator | 10,000 | 50% | 30 | 8 | Test H0 versus H1 |
-| Exploratory grid | Same generator | 100, 1,000, 10,000 | 0%, 50%, 100% | 30 per cell | 8 | Describe size and hit-rate sensitivity |
-
-The full 3 by 3 grid includes the primary cell once: **270 worker processes and 4,320 raw measurement rows**, excluding warmups. Seeds are 101 through 130. Each cell uses 1,000 queries, ten batch loops, two warmup pairs, balanced randomized method order and a 120-second worker timeout. Large-list cells dominate runtime; total study time is machine dependent.
-
-```bash
-python src/benchmark.py --config configs/study.json
-```
-
-Run the study only after freezing the protocol and resolving the topic assumption. Do not combine measurements from different computers, interpreters or native/container environments into one primary test. Eight repeats within a seed are technical repeats, not eight independent experimental units. See the passport for the inference and exclusion rules.
-
-## Repository structure
+## Evidence and repository layout
 
 ```text
-task2-research-methods/
-├── README.md
-├── LICENSE
-├── CONTRIBUTIONS.md
-├── Dockerfile
-├── requirements.txt
-├── .python-version
-├── .gitignore
-├── .dockerignore
-├── config.json
-├── configs/
-│   └── study.json
-├── data/
-│   ├── README.md
-│   └── sample/
-│       └── keys.csv
-├── src/
-│   ├── __init__.py
-│   └── benchmark.py
-├── tests/
-│   └── test_benchmark.py
-├── docs/
-│   ├── methodology-passport.md
-│   ├── environment.md
-│   ├── verification.md
-│   ├── rubric-map.md
-│   ├── github-guide-ru.md
-│   └── example-results/
-│       ├── smoke-raw.csv
-│       ├── smoke-summary.json
-│       ├── smoke-environment.json
-│       ├── smoke-status.json
-│       ├── smoke-config.snapshot.json
-│       ├── smoke-schedule.json
-│       └── tests.txt
-├── notebooks/
-│   └── README.md
-└── results/
-    └── README.md
+data/raw/test_run.jsonl             5,400 actual phase-labelled observations, about 2 MiB
+data/provenance/                    configuration, run status, schedule, environment and hashes
+data/processed/                    four seed/condition CSV tables and analysis audit
+notebooks/01_data_analysis.ipynb     fully executed analysis, eight code cells
+src/benchmark.py                   measurement instrument, including warmup logging
+src/process_data.py                validation, filtering, statistics and paired bootstrap
+src/visualize.py                   scientific figures in PDF and 300 DPI PNG
+src/run_notebook.py                 fresh-kernel notebook execution
+reports/task3_report.md             report for LMS or GitHub reading
+reports/Task3_Report_RU.pdf          Russian report for submission
+reports/figures/                    two scientific figures, each PDF and PNG
+docs/domain_model.md               C4 model, equations and metric collection points
+docs/task3-checklist.md             assignment criteria and verification evidence
 ```
 
-## Configuration and output
+The raw file is intentionally small and complete for this experiment, allowing exact reanalysis. `.gitignore` permits only the named evidence and summary files while ignoring additional raw runs, caches, environments and temporary files. The raw file SHA256 is `577b240fbee8cd3100be0c800c5142fb3772ed64df06a6ab2c69d173ae0db069`.
 
-`config.json` is the smoke configuration; `configs/study.json` defines the planned experiment. JSON is explicitly allowed by the assignment and needs no YAML dependency. Data and configuration paths are relative to the repository root, independent of the current terminal directory. An absolute path is also accepted. `--output` selects a new output directory.
+## Statistical scope and limitations
 
-Each completed run saves:
+The experiment concerns repeated lookups in prebuilt containers. Set construction is more expensive and the set uses more traced allocations; a one-off lookup may not benefit. The data are synthetic integer workloads with uniform hit/miss sampling and no deliberate hash collisions. Results cannot be extended directly to strings, databases or production services.
 
-| File | Contents |
-|---|---|
-| `raw.csv` | Every timed observation, seed, method order, workload hash, construction time, lookup time, throughput, traced peak and errors |
-| `summary.json` | Scenario summaries, paired seed estimates, guardrail outcome and eligible primary sign test |
-| `environment.json` | Python/build, OS/kernel, architecture, CPU count, clock, config hash and code/input hashes |
-| `config.snapshot.json` | Exact configuration used |
-| `schedule.json` | Actual order of workload cells and seeds |
-| `status.json` | Completion/failure state, elapsed time and measurement count |
+Thirty seeds are workload units, not 30 computers. Eight repeated batches are technical repeats. Confidence intervals quantify seed variation conditional on one machine and collection run; they omit between-machine and between-run uncertainty. The desktop remained in use, and CPU affinity, background processes, power, temperature and frequency were not controlled. The fixed randomized schedule reduces systematic order effects but does not remove environmental noise or prove independence across runs.
 
-`mean_lookup_ns` is elapsed batch time divided by the number of lookups. It includes loop and result-accumulation overhead; it is not an individual-query p95. Throughput is the reciprocal transformation of the same timing, not an independent endpoint. Container construction is measured separately and excluded from the primary timer. `peak_python_bytes` is a separate untimed allocation measurement, **not total process RAM or RSS**. Error counts must be zero; allocation peaks must not exceed 8 MiB.
+Only the primary condition is used for the confirmatory sign test, under its conditional independence assumption. The other eight conditions are exploratory. We do not claim a universal Python speedup or a new algorithm; the proposed implementation is Python's built-in set.
 
-Exit codes: `0` successful run and guardrails; `1` invalid input/configuration or output-path issue; `2` completed run with a failed guardrail; `3` failed or timed-out worker. A timeout retains partial data, writes `status.json` and prevents statistical inference. A nonempty output directory causes an error instead of overwriting previous evidence.
+The timing scale follows the measurements, not service RPS. Bootstrap seed is 42 and 10,000 resamples are used. The 212 IQR flags were retained. The p95/p99 fields describe the distribution of seed medians, not individual-request tail latency. M3 measurements are collected once per method/worker and copied into observation rows; they are not independent memory repeats. No cold-start improvement is claimed.
 
-## Reproducibility and limitations
+## Submission and attribution
 
-Both methods execute the same Python `query in container` loop over the same labelled query sequence. Set construction is amortized outside the steady-state endpoint; its separate cost must be considered when discussing one-off lookups. Tracing is disabled for all timing measurements, and garbage collection is disabled only within those measurement regions. All workers receive `PYTHONHASHSEED=0`.
-
-The set and list have different memory layouts. Cache effects, interpreter overhead, operating-system scheduling and CPU frequency can affect results. Seeds vary workloads but do not create independent physical computers. The proposed inference is conditional on the specified machine/protocol; this project cannot establish a universal speedup for databases, strings, adversarial hash collisions or production services.
-
-The repository contains a small, labelled smoke example in `docs/example-results/`. Generated runs, caches, environments, binary datasets and model weights are ignored by Git. No large datasets, weights, private data or credentials are needed.
-
-## GitHub and submission
-
-The project is published at [the public GitHub repository](https://github.com/medetkb/integer-membership-benchmark). See [the Russian GitHub guide](docs/github-guide-ru.md) for verification and future updates. For pair work, document only actual contributions.
-
-## Citation and license
-
-Suggested citation:
-
-> Кожахмет Медетбек and Джазбаев Айбар. (2026). *List versus set membership for repeated integer lookup*. Research Methods Task 2. https://github.com/medetkb/integer-membership-benchmark. Specify the commit used for the experiment.
-
-The code, documentation and synthetic sample are released under the [MIT License](LICENSE). The original course handout is not redistributed in this repository.
+Submit the public repository link and `reports/Task3_Report_RU.pdf` (or `reports/task3_report.md`) in LMS. The course brief and handouts are not redistributed. The source remains under the [MIT License](LICENSE). [CONTRIBUTIONS.md](CONTRIBUTIONS.md) preserves the pair's prior contribution record; new individual work is not invented. Task 3 code, analysis and report preparation were assisted by Codex. Both authors should understand and review the results before submission.
 
 ## References
 
-- [Python `time` documentation](https://docs.python.org/3.12/library/time.html#time.perf_counter_ns): timing API.
-- [Python `tracemalloc` documentation](https://docs.python.org/3.12/library/tracemalloc.html): traced allocation scope.
-- [Python `random` documentation](https://docs.python.org/3.12/library/random.html#notes-on-reproducibility): seeded workloads and version-specific reproducibility.
-- [Official Python Docker image](https://hub.docker.com/layers/library/python/3.12.14-slim-bookworm/images/sha256-1aaa65a85fda306ffb8b910824d4e93bdce61e212c7e87168123ea3073b41a1a): pinned image provenance.
-- [GitHub guide to publishing local code](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
+- [Original methodology passport](docs/methodology-passport.md).
+- [Python timing API](https://docs.python.org/3.12/library/time.html#time.perf_counter_ns).
+- [NumPy reproducible bootstrap draws](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.choice.html).
+- [C4 component model](https://c4model.com/diagrams/component).
+- [NBClient executed notebooks](https://nbclient.readthedocs.io/en/latest/client.html).
