@@ -80,3 +80,4 @@ data/processed/*
 *.pdf
 !reports/figures/*.pdf
 !reports/Task3_Report_RU.pdf
+!reports/Task3_Report_EN.pdf

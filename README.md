@@ -2,7 +2,7 @@
 
 Research Methods Task 3: real measurements, reproducible analysis and scientific visualization.
 
-**Authors:** Кожахмет Медетбек and Джазбаев Айбар. **Track:** Software Engineering. **Release:** `v3.0.0-task3`.
+**Authors:** Кожахмет Медетбек and Джазбаев Айбар. **Track:** Software Engineering. **Release:** `v3.0.1-task3`.
 
 This extends [Task 2](README_TASK2.md) using the same research question and study configuration. It compares built-in Python list membership (baseline) with set membership (proposed implementation) for repeated integer lookups. The Task 2 topic is continued here; no claim about an unprovided Task 1 is made.
 
@@ -25,7 +25,7 @@ The table gives **median (p25-p75)** across 30 seed estimates per condition. Eac
 | 10,000 | 100% | 15,768.29 (15,633.58-15,982.92) | **24.47 (24.04-24.71)** | 642.62 |
 
 
-The primary-condition maximum traced allocation peaks were 0.0848 MiB for list and 0.6253 MiB for set. The full experiment had zero failed evaluation observations. Set construction took a median 101.96 microseconds versus 14.89 for list. See the [full report](reports/task3_report.md) and [Russian PDF report](reports/Task3_Report_RU.pdf).
+The primary-condition maximum traced allocation peaks were 0.0848 MiB for list and 0.6253 MiB for set. The full experiment had zero failed evaluation observations. Set construction took a median 101.96 microseconds versus 14.89 for list. See the [full report](reports/task3_report.md) and [English PDF report](reports/Task3_Report_EN.pdf).
 
 ![Lookup scaling](reports/figures/fig1_latency_vs_load.png)
 
@@ -75,7 +75,7 @@ src/process_data.py                validation, filtering, statistics and paired 
 src/visualize.py                   scientific figures in PDF and 300 DPI PNG
 src/run_notebook.py                 fresh-kernel notebook execution
 reports/task3_report.md             report for LMS or GitHub reading
-reports/Task3_Report_RU.pdf          Russian report for submission
+reports/Task3_Report_EN.pdf          English report for submission
 reports/figures/                    two scientific figures, each PDF and PNG
 docs/domain_model.md               C4 model, equations and metric collection points
 docs/task3-checklist.md             assignment criteria and verification evidence
@@ -95,7 +95,7 @@ The timing scale follows the measurements, not service RPS. Bootstrap seed is 42
 
 ## Submission and attribution
 
-Submit the public repository link and `reports/Task3_Report_RU.pdf` (or `reports/task3_report.md`) in LMS. The course brief and handouts are not redistributed. The source remains under the [MIT License](LICENSE). [CONTRIBUTIONS.md](CONTRIBUTIONS.md) preserves the pair's prior contribution record; new individual work is not invented. Task 3 code, analysis and report preparation were assisted by Codex. Both authors should understand and review the results before submission.
+Submit [this public repository version](https://github.com/Medetkb/integer-membership-benchmark/tree/v3.0.1-task3) and `reports/Task3_Report_EN.pdf` (or `reports/task3_report.md`) in LMS. The course brief and handouts are not redistributed. The source remains under the [MIT License](LICENSE). [CONTRIBUTIONS.md](CONTRIBUTIONS.md) preserves the pair's prior contribution record; new individual work is not invented. Task 3 code, analysis and report preparation were assisted by Codex. Both authors should understand and review the results before submission.
 
 ## References
 

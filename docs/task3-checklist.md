@@ -13,9 +13,9 @@
 | Domain model | `docs/domain_model.md`: Mermaid C4 component model with M1-M3 metric points. |
 | Modular processing | Separate `src/process_data.py` and `src/visualize.py`; notebook imports them. |
 | Results table and figures | Root README contains median (p25-p75) table, discussion, plots and domain-model link. |
-| Report | `reports/task3_report.md` and `reports/Task3_Report_RU.pdf`. |
+| Report | `reports/task3_report.md` and `reports/Task3_Report_EN.pdf`. |
 | Git hygiene | Explicit evidence allowlist; runtime runs, checkpoints and environments excluded. |
-| Release | Final tag `v3.0.0-task3` identifies the submission snapshot. |
+| Release | Final tag `v3.0.1-task3` identifies the submission snapshot. |
 
 ## Validation
 

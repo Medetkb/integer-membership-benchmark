@@ -38,6 +38,12 @@
     "data/raw/test_run.jsonl": "577b240fbee8cd3100be0c800c5142fb3772ed64df06a6ab2c69d173ae0db069",
     "data/processed/metrics_summary.csv": "26fa12d126f1549b0ffec00a60b6175c58912c610524c952873bb0429608e047",
     "notebooks/01_data_analysis.ipynb": "54f79816d2ca31148f16da3af4dc9b66d000e928b24159ebd1a3af6f7730b216",
-    "reports/Task3_Report_RU.pdf": "f879217540f3eb2b13d4025dec25c5694cfc4296dec980e241593340b88040bb"
-  }
+    "reports/Task3_Report_RU.pdf": "f879217540f3eb2b13d4025dec25c5694cfc4296dec980e241593340b88040bb",
+    "reports/Task3_Report_EN.pdf": "d29595c06e6eebf19e7079a9b4e4df90a6da6e369e202d3b529a18b6d8c3b9e6"
+  },
+  "submission_report": "reports/Task3_Report_EN.pdf",
+  "submission_report_language": "English",
+  "english_report_pages": 5,
+  "english_report_pages_visually_inspected": true,
+  "english_report_numeric_results_verified": true
 }
